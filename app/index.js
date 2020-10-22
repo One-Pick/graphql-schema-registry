@@ -102,7 +102,7 @@ exports.init = async () => {
 		return server;
 	}
 
-	server = app.listen(3000, () => {
+	server = app.listen(3000, '0.0.0.0', () => {
 		logger.info('Server listening on port: 3000');
 	});
 
