@@ -21,12 +21,6 @@
   "keywords": [
     "graphql"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run format",
-      "pre-push": "npm run format"
-    }
-  },
   "prettier": {
     "singleQuote": true
   },
