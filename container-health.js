@@ -5,7 +5,7 @@ const http = require('http');
 
 const options = {
 	// we run check from docker container, so it should be local
-	host: 'localhost',
+	host: '0.0.0.0',
 	// client port
 	port: 3000,
 	// health endpoint to call

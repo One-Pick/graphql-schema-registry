@@ -2,10 +2,7 @@
 
 START_TIME=$(date +%s)
 
-SCRIPT_DIR=$(
-    cd $(dirname "$0")
-    pwd
-)
+CURR_DIR=$(pwd)
 
 usage() {
     echo "Usage: push.sh [ --docker-registry DOCKER_REGISTRY ]
@@ -93,7 +90,7 @@ else
 fi
 
 echo "=> Read app version"
-VERSION=$(cat ${SCRIPT_DIR}/../package.json |
+VERSION=$(cat ${CURR_DIR}/package.json |
     grep version |
     head -1 |
     awk -F: '{ print $2 }' |
