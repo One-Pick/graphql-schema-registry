@@ -1,5 +1,10 @@
 #!/bin/bash
 
-export SOURCE_TAG="graphql-schema-registry"
-./_scripts/dockerize.sh
-export SOURCE_TAG=''
+export $(grep -v '^#' .env | xargs)
+
+if [ -z $NPM_TOKEN ]; then
+    echo "ERROR: NPM_TOKEN is empty. Please set export NPM_TOKEN=your_npm_token"
+    exit 1
+fi
+
+./_scripts/dockerize.sh --dockerfile=Dockerfile

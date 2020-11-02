@@ -59,7 +59,7 @@ if [ -z $SOURCE_TAG ]; then
     exit 1
 fi
 
-docker build -t ${SOURCE_TAG} --build-arg REVISION="${REVISION}" --build-arg BUILD_TIME="${BUILD_TIME}" -f "${CURR_DIR}/${DOCKERFILE}" ${CURR_DIR}
+docker build -t ${SOURCE_TAG} --build-arg REVISION="${REVISION}" --build-arg BUILD_TIME="${BUILD_TIME}" --build-arg NPM_TOKEN="${NPM_TOKEN}" -f "${CURR_DIR}/${DOCKERFILE}" ${CURR_DIR}
 
 END_TIME=$(date +%s)
 

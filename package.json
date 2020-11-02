@@ -12,7 +12,7 @@
     "build": "rimraf dist && mkdirp dist && webpack --env.production --bail",
     "docker-compose-validate": "docker-comply compose --file ./docker-compose.deploy.yml",
     "install:linux": "mkdir -p ~/graphql-schema-registry_node_modules && mkdir -p ./node_modules && mount --bind ~/graphql-schema-registry_node_modules ./node_modules && npm install",
-    "start:dev": "nodemon --watch schema-registry.js --watch app --inspect=0.0.0.0:5850 schema-registry.js"
+    "start:dev": "nodemon --watch schema-registry.js --watch app --inspect=0.0.0.0:54000 schema-registry.js"
   },
   "repository": {
     "type": "git",
