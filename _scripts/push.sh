@@ -105,7 +105,7 @@ fi
 echo "=> Make current tag"
 DOCKER_TAG="${DOCKER_REGISTRY}:${VERSION}"
 LATEST_TAG="${DOCKER_REGISTRY}:latest"
-if [ ! -z "${VERSION_TAG}" ]; then 
+if [ ! -z "${VERSION_TAG}" ]; then
     DOCKER_TAG="$DOCKER_TAG.${VERSION_TAG}"
     LATEST_TAG="${LATEST_TAG}.${VERSION_TAG}"
 fi
@@ -132,7 +132,6 @@ else
     docker tag ${SOURCE_TAG} ${UNIQUE_TAG}
 
     docker tag ${UNIQUE_TAG} 509575629265.dkr.ecr.us-east-2.amazonaws.com/onepick/graphql-schema-registry:latest
-
 
     echo "=> Push unique tag"
     docker push ${UNIQUE_TAG}
