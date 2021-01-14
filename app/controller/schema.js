@@ -17,9 +17,9 @@ async function getAndValidateSchema({ trx, services } = {}) {
 
 	logger.info(
 		'Validating schema. Got services schemas from DB transaction..',
-		{
+		/*{
 			schemas,
-		}
+		}*/
 	);
 
 	composeAndValidateSchema(schemas);
@@ -33,9 +33,10 @@ exports.pushAndValidateSchema = async ({ service }) => {
 	return await transact(async (trx) => {
 		const schema = await registerSchema({ trx, service });
 
-		logger.info('Registered service new schema in DB transaction..', {
+		logger.info('Registered service new schema in DB transaction..', 
+		/*{
 			schema,
-		});
+		}*/);
 
 		await getAndValidateSchema({ trx });
 
